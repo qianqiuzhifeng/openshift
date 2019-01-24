@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('cucumber') {
       steps {
-        cucumber(fileIncludePattern: 'feature/cucumber/*.json.', buildStatus: 'SUCCESS', mergeFeaturesById: true, skipEmptyJSONFiles: true, stopBuildOnFailedReport: true)
+        cucumber(fileIncludePattern: '**/*.json', buildStatus: 'SUCCESS', mergeFeaturesById: true, skipEmptyJSONFiles: true, stopBuildOnFailedReport: true, jsonReportDirectory: 'feature/cucumber')
       }
     }
   }
